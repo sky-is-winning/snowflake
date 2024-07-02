@@ -12,13 +12,13 @@ class ColorFormatter(Formatter):
     CYAN = "\x1b[96m"
     RESET = "\x1b[0m"
 
-    FORMAT_PREFIX = '[%(asctime)s] - <%(name)s> '
-    FORMAT = '%(levelname)s: %(message)s'
+    FORMAT_PREFIX = '%(asctime)s '
+    FORMAT = '[%(levelname)s]: %(message)s'
 
     FORMATS = {
         logging.NOTSET:   GREY + FORMAT_PREFIX            + FORMAT + RESET,
         logging.DEBUG:    GREY + FORMAT_PREFIX            + FORMAT + RESET,
-        logging.INFO:     GREY + FORMAT_PREFIX + CYAN     + FORMAT + RESET,
+        logging.INFO:     GREY + FORMAT_PREFIX     + FORMAT + RESET,
         logging.WARNING:  GREY + FORMAT_PREFIX + YELLOW   + FORMAT + RESET,
         logging.ERROR:    GREY + FORMAT_PREFIX + RED      + FORMAT + RESET,
         logging.CRITICAL: GREY + FORMAT_PREFIX + BOLD_RED + FORMAT + RESET,
